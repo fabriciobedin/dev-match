@@ -1,9 +1,10 @@
 const express = require("express");
-const server = express();
+const routes = require("./routes");
+
 const port = 3333;
+const server = express();
+
+server.use(express.json());
+server.use(routes);
 
 server.listen(port);
-
-server.get("/", (req, res) => {
-  res.send(`Hello ${req.query.name}`);
-});
