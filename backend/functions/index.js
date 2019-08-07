@@ -39,4 +39,13 @@ app.get("/", (req, res) => {
     .catch();
 });
 
+app.get("/facts.json", (req, res) => {
+  // res.set("Cache-Control", "public, max-age=300, s-maxage=600");
+  getFacts()
+    .then(facts => {
+      return res.json(facts);
+    })
+    .catch();
+});
+
 exports.app = functions.https.onRequest(app);
