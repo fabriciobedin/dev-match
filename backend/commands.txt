@@ -4,10 +4,4 @@ yarn add express
 yarn add nodemon -D
 yarn add mongoose
 yarn add axios
-
-
-yarn add firebase-tools
-firebase init hosting
-firebase init functions
-firebase serve --only functions,hosting
-npm i handlebars consolidate --save
+yarn add cors
