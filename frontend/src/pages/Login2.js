@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import api from "../services/api";
 import logo from "../assets/logo.svg";
 import "./Login.css";
 
@@ -13,12 +15,17 @@ export default class Login2 extends Component {
 
   handleChange(event) {
     this.setState({ username: event.target.value });
-    console.log(this.state.username);
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.username);
+    const response = await api.post("/devs", {
+      username: this.state.username
+    });
+
+    const { _id } = response.data;
+
+    this.props.history.push(`/dev/${_id}`);
   }
   render() {
     return (

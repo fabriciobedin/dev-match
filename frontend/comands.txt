@@ -1,6 +1,7 @@
 yarn create react-app frontend
 
 yarn add react-router-dom
+yarn add axios
 
 
 include it in emmet json
